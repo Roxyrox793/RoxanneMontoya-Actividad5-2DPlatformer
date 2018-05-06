@@ -14,7 +14,18 @@ public class charactercontrol : MonoBehaviour {
 
 	}
 
+	void OnCollisionEnter2D(Collision2D coll) {
 
+
+		if(coll.gameObject.tag == "Coins"){
+			coins = coins + 1;
+			contadorCoins.text = coins.ToString();
+
+
+		}
+
+
+	}
 	
 
 	// Update is called once per frame
