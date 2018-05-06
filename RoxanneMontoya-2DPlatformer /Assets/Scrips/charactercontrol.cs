@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class charactercontrol : MonoBehaviour {
 	float speed = 0.25f;
 	int coins = 0;
+	int hearts = 0;
 
 	public Text contadorCoins;
+	public Text contadorHearts;
 
 	// Use this for initialization
 	void Start () {
@@ -17,9 +19,33 @@ public class charactercontrol : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll) {
 
 
-		if(coll.gameObject.tag == "Coins"){
+
+		if (coll.gameObject.tag == "Coins")
+		{
+
 			coins = coins + 1;
+
 			contadorCoins.text = coins.ToString();
+
+			print("Coins");
+
+			GameObject.Destroy(coll.gameObject);
+
+
+
+		}
+
+		if (coll.gameObject.tag == "Hearts")
+		{
+
+			hearts = hearts + 1;
+
+			contadorHearts.text = hearts.ToString();
+
+			print("Hearts");
+
+			GameObject.Destroy(coll.gameObject);
+
 
 
 		}
