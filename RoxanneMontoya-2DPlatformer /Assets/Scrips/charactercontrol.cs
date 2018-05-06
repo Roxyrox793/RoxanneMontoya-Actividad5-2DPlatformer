@@ -7,9 +7,12 @@ public class charactercontrol : MonoBehaviour {
 	float speed = 0.25f;
 	int coins = 0;
 	int hearts = 0;
+	int stars = 0;
 
 	public Text contadorCoins;
 	public Text contadorHearts;
+	public Text contadorStars;
+
 
 	// Use this for initialization
 	void Start () {
@@ -43,6 +46,20 @@ public class charactercontrol : MonoBehaviour {
 			contadorHearts.text = hearts.ToString();
 
 			print("Hearts");
+
+			GameObject.Destroy(coll.gameObject);
+
+
+
+		}
+		if (coll.gameObject.tag == "Stars")
+		{
+
+			stars = stars + 1;
+
+			contadorStars.text = stars.ToString();
+
+			print("Stars");
 
 			GameObject.Destroy(coll.gameObject);
 
